@@ -1,3 +1,5 @@
+import { style, AnimationStyleMetadata } from '@angular/animations';
+
 export class User{
     Id: number;
     username: string;
@@ -23,3 +25,11 @@ export class ProductDomain{
     domainName:string;
     imgURL:any;
 }
+
+export const images:AnimationStyleMetadata[] = [
+    style({ background: 'red' }),
+          style({ background: 'green' }),
+          style({ background: 'yellow' }),
+          style({ background: 'pink' }),
+          style({ background: 'white' })
+]

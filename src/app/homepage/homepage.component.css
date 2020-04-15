@@ -1,4 +1,36 @@
 
+h1 {
+  font-size: 2.1rem;
+  line-height: 1.4;
+  letter-spacing: 0.5rem;
+  text-align: center;
+  color: white;
+}
+
+.container {
+  background-color: rgba(27,31, 37, 0.85);
+}
+
+.maindiv {
+  width: 70%;
+  height: 320px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-size: 100% 100%;
+  box-shadow: 1px 2px 10px 5px white;
+  /* animation: slider 40s infinite step-end; */
+}
+
+@keyframes slider {
+   0%{background-image: url("../../assets/images/grocery.jpg");}
+   21%{background-image: url("../../assets/images/cosmetics.jpg");}
+   41%{background-image: url("../../assets/images/Cloth.jpg");}
+   61%{background-image: url("../../assets/images/electronics.jpg");}
+   81%{background-image: url("../../assets/images/footwear.jpg");}
+}
+
 img {
     max-width: 100%;
   }
@@ -82,4 +114,13 @@ img {
     transition: 1s;
   }
   
+  .model-footer {
+    display: table;
+    width: 100%;
+  }
+
+  .wrapper-div {
+    display: table-cell;
+    vertical-align: middle;
+  }
   
