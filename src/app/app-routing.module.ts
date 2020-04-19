@@ -8,12 +8,14 @@ import { ProductDomainComponent } from './product-domain/product-domain.componen
 
 
 const routes: Routes = [
-  {path: '', component: HomepageComponent, pathMatch:'full'},
+  {path: 'home/:id', component: HomepageComponent},
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegistrationComponent },
   { path:'product', component: ProductComponent},
-  { path: 'productDomain', component: ProductDomainComponent}
-  
+  { path: 'productDomain', component: ProductDomainComponent},
+  //{path:'home/:id',component: HomepageComponent}
+  { path: '', component: HomepageComponent, pathMatch: 'full'}
+
 ];
 
 @NgModule({

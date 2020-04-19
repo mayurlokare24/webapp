@@ -7,6 +7,7 @@ import { User, Login } from './model';
   providedIn: 'root'
 })
 export class UserService {
+  private Id:number;
   httpClient: any;
   //public static API_ENDPOINT='http://localhost:8085/';
 
@@ -34,6 +35,15 @@ export class UserService {
   // product(product : Product) : Observable<any>{
   //   return this.http.post()
   // }
+
+   getId(): number {
+    return this.Id;
+ }
+ setId(id: number) {
+    this.Id = id;
+ }
+
+
  
  }
 
