@@ -5,15 +5,17 @@ import { LoginComponent } from './login/login.component';
 import { ProductComponent } from './product/product.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ProductDomainComponent } from './product-domain/product-domain.component';
+import { EditComponent } from './edit/edit.component';
 
 
 const routes: Routes = [
-  {path: '', component: HomepageComponent, pathMatch:'full'},
+  {path: '', pathMatch:'full', redirectTo: 'home'},
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegistrationComponent },
   { path:'product', component: ProductComponent},
-  { path: 'productDomain', component: ProductDomainComponent}
-  
+  { path: 'productDomain', component: ProductDomainComponent},
+  { path: 'home', component: HomepageComponent},
+  { path: 'edit', component: EditComponent}
 ];
 
 @NgModule({

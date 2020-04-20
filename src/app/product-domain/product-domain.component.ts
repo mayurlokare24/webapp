@@ -18,13 +18,14 @@ export class ProductDomainComponent implements OnInit {
   constructor(private route: ActivatedRoute,
     private router: Router) {
       this.productDomain = new ProductDomain();
-      this.domainName=""
+      this.domainName = this.route.snapshot.paramMap.get('domain_name');
+      console.log("Domain_name = " + this.domainName );
      }
 
   ngOnInit() {
     this.sub = this.route.queryParams.subscribe(params=>{
-      this.domainName = params['domain_name'];
-      
+      //this.domainName = params['domain_name'];
+      //console.log("Received Domain Name : " + this.domainName);
     });
   }
 

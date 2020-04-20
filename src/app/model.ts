@@ -26,6 +26,13 @@ export class ProductDomain{
     imgURL:any;
 }
 
+export class ValueMap {
+    key:string;
+    value:ValueMap[];
+
+    constructor(key:string){}
+};
+
 export const images:AnimationStyleMetadata[] = [
     style({ background: 'red' }),
           style({ background: 'green' }),

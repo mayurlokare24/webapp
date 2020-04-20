@@ -14,7 +14,8 @@ import { FormsModule } from '@angular/forms';
 import { ProductComponent } from './product/product.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ProductDomainComponent } from './product-domain/product-domain.component';
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { EditComponent } from './edit/edit.component';
 
 
 
@@ -27,6 +28,7 @@ import { ProductDomainComponent } from './product-domain/product-domain.componen
     ProductComponent,
     HomepageComponent,
     ProductDomainComponent,
+    EditComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import { ProductDomainComponent } from './product-domain/product-domain.componen
     MyMaterialModule,
     FormsModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    NgbModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

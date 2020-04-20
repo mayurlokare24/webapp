@@ -1,4 +1,46 @@
 <div class="container ">
-    <h1>We will provide you</h1>
-    <div class="maindiv" [@slideTransition]="{value: state, params: {pageMarginValue: currentMargin}}"></div>
+    <!-- <h1>We will provide you</h1> -->
+    <!-- <div class="maindiv" [@slideTransition]="{value: state, params: {pageMarginValue: currentMargin}}"></div> -->
+    <!-- <div class="maindiv" @slideTransition></div> -->
+    <div *ngIf="enableMenubar">
+        <mat-toolbar style="color: coral; min-height: min-content; background-color: darkcyan;">
+            <mat-toolbar-row style="height: 30px;">
+                <div *ngFor="let menu of menubar">
+                    <button mat-button [matMenuTriggerFor]="subMenu">
+                        <mat-icon>{{menu.icon}}</mat-icon>{{menu.title}}
+                    </button>
+                    <mat-menu #subMenu="matMenu">
+                        <button mat-menu-item *ngFor="let menuItem of menu.submenu" [routerLink]="['/product', {product_name:menuItem}]">{{menuItem}}</button>
+                    </mat-menu>
+                </div>
+            </mat-toolbar-row>
+        </mat-toolbar>
+
+
+
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8 mainSlider">
+            <ngb-carousel *ngIf="sliderArray">
+                <div *ngFor="let slide of sliderArray">
+                    <ng-template ngbSlide>
+                        <a [routerLink]="['/productDomain', {domain_name:slide.title}]">
+                            <div id="over" class="picsum-img-wrapper">
+                                <img [src]="slide.img" alt="Random first slide" style="width: 550px; height: 390px;">
+                            </div>
+                            <div class="carousel-caption">
+                                <mark
+                                    style="color: white; background-color: black; font-size: 2rem; box-shadow: 1px 2px 40px 25px black;">{{slide.title}}</mark>
+                            </div>
+                        </a>
+                    </ng-template>
+                </div>
+            </ngb-carousel>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
 </div>
