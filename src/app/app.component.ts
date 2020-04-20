@@ -10,6 +10,8 @@ export class AppComponent {
   title = 'webApp';
 
   constructor(private router : Router){}
+
+
   additem():void {
     this.router.navigateByUrl('product');
 };

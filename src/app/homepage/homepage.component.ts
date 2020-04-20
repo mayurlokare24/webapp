@@ -1,32 +1,19 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { interval } from 'rxjs';
 import { animate, trigger, transition, keyframes, style, AnimationAnimateMetadata, AnimationStyleMetadata, state } from '@angular/animations';
 import { images } from '../model';
+import { UserService } from '../user.service';
+
 
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css'],
-  // animations: [
-  //   trigger('slideTranition', [
-  //     state('*', style({ marginLeft: '{{pageMarginValue}}%' }), {params: {pageMarginValue: 0}}),
-  //     transition('*=>*', animate('2s ease infinite'))
-  //     // transition(':enter', [
-  //     //   animate('10s', keyframes(
-  //     //     // style({ background: 'red' }),
-  //     //     // style({ background: 'green' }),
-  //     //     // style({ background: 'yellow' }),
-  //     //     // style({ background: 'pink' }),
-  //     //     // style({ background: 'white' })
-  //     //     images
-  //     //   ))
-  //     // ]),
-  //   ]), 
-  // ]
-})
-export class HomepageComponent implements OnInit {
 
+
+export class HomepageComponent implements OnInit {
+  Id:number;
   selectedIndex: number;
   currentMargin = 0;
   step = 10;
@@ -43,6 +30,7 @@ export class HomepageComponent implements OnInit {
     style({ background: 'pink' }),
     style({ background: 'white' })
   ]
+  anim:AnimationAnimateMetadata = animate("10s", keyframes(this.styls));
   anim: AnimationAnimateMetadata = animate("10s", keyframes(this.styls));
 
   sliderArray = [
@@ -54,16 +42,21 @@ export class HomepageComponent implements OnInit {
     { img: '../../assets/images/jewellary.jpg', title: 'Jewellary' }
   ];
 
+  constructor(private router: Router,private route: ActivatedRoute,private userService:UserService) {
+    // this.selectedIndex = 0;
+    // interval(4000).subscribe(val => this.selectedNext());
 
-
-  constructor(private router: Router) {
     this.enableMenubar = false;
     this.selectedIndex = 0;
     interval(4000).subscribe(val => this.selectedNext());
   }
 
   ngOnInit() {
+     this.Id = Number(this.route.snapshot.paramMap.get("id"));
+     this.userService.setId(this.Id);
+
     this.enableMenubar = true;
+    
   }
 
   additem(): void {

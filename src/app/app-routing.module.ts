@@ -9,6 +9,7 @@ import { EditComponent } from './edit/edit.component';
 
 
 const routes: Routes = [
+  {path: 'home/:id', component: HomepageComponent},
   {path: '', pathMatch:'full', redirectTo: 'home'},
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegistrationComponent },
@@ -16,6 +17,8 @@ const routes: Routes = [
   { path: 'productDomain', component: ProductDomainComponent},
   { path: 'home', component: HomepageComponent},
   { path: 'edit', component: EditComponent}
+
+
 ];
 
 @NgModule({

@@ -19,9 +19,12 @@ export class LoginComponent implements OnInit {
   }
  
   login(){
+    
     this.userService.login(this.login1).subscribe( Response => {
-      if(Response==true){
+      var id = Response.user;
+      if(Response.login==1){
         alert("login success");
+        this.router.navigate(['/home/'+id]);
       }
       else{
         alert("login fail");

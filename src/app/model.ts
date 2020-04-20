@@ -12,6 +12,7 @@ export class User{
     userid:number;
     mobileno:string;
     email:string;
+    usertype:number;
 
   
     constructor(){}
