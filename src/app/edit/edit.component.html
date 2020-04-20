@@ -1,0 +1,25 @@
+<div class="container">
+    <h1>Edit Website</h1>
+    <br>
+    <div class="row">
+        <div class="col-sm-2">
+            <label>Title for Menu</label>
+        </div>
+        <div class="col-sm-8">
+            <input type="text" [(ngModel)]="menuTitle" style="width: 100%;">
+        </div>
+        <div class="col-sm-2">
+            <button mat-raised-button style="color: darkcyan;" (click)="addMenu()">Add Menu</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <label>Select the Menu</label>
+        </div>
+        <div class="col-sm-9">
+            <select name="menus" style="width: 100%;">
+                <option *ngFor="let menu of menuDB" [value]="menu.key">{{menu.key}}</option>
+            </select>
+        </div>
+    </div>
+</div>
