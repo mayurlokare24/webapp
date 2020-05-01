@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { ProductDomain } from '../model';
+//import { ProductDomain } from '../model';
 
 @Component({
   selector: 'app-product-domain',
@@ -12,12 +12,12 @@ export class ProductDomainComponent implements OnInit {
 
   private domainName:string;
   private sub:Subscription;
-  public productDomain:ProductDomain;
+  //public productDomain:ProductDomain;
   public selectedFile;
 
   constructor(private route: ActivatedRoute,
     private router: Router) {
-      this.productDomain = new ProductDomain();
+      //this.productDomain = new ProductDomain();
       this.domainName = this.route.snapshot.paramMap.get('domain_name');
       console.log("Domain_name = " + this.domainName );
      }

@@ -10,12 +10,14 @@ import { MyMaterialModule } from  './my-material/my-material.module';
 import { RouterModule, Routes } from '@angular/router';
 import{UserService} from './user.service';
 import { HttpClientModule, HttpClient} from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { ProductComponent } from './product/product.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ProductDomainComponent } from './product-domain/product-domain.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { EditComponent } from './edit/edit.component';
+import { NotificationService } from './notification.service';
+import {FormControl} from "@angular/forms";
 
 
 
@@ -38,9 +40,11 @@ import { EditComponent } from './edit/edit.component';
     FormsModule,
     HttpClientModule,
     RouterModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
-  providers: [UserService],
+  providers: [UserService,NotificationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

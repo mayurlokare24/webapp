@@ -11,7 +11,7 @@ import { UserService } from '../user.service';
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css'],
 
-
+})
 export class HomepageComponent implements OnInit {
   Id:number;
   selectedIndex: number;
@@ -31,7 +31,7 @@ export class HomepageComponent implements OnInit {
     style({ background: 'white' })
   ]
   anim:AnimationAnimateMetadata = animate("10s", keyframes(this.styls));
-  anim: AnimationAnimateMetadata = animate("10s", keyframes(this.styls));
+ // anim: AnimationAnimateMetadata = animate("10s", keyframes(this.styls));
 
   sliderArray = [
     { img: '../../assets/images/grocery.jpg', title: 'Grocery' },

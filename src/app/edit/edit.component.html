@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <h1>Edit Website</h1>
     <br>
     <div class="row">
@@ -22,4 +22,122 @@
             </select>
         </div>
     </div>
-</div>
+</div> -->
+<div class="main-content">
+    <div class="container-fluid">
+      <div class="card">
+        <div class="card-header card-header-danger">
+          <h4 class="card-title">Add Products</h4>
+        </div>
+        <div class="card-body">
+          <form>
+            <mat-accordion class="example-headers-align" [multi]="true">
+  
+              <mat-expansion-panel [expanded]="false" hideToggle >
+                <mat-expansion-panel-header>
+                  <mat-panel-title style=color:crimson [ngStyle]="{'font-weight':step < 0 ? 'normal':'bold' }">
+                    Add Product Category
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="row">
+                  <div class="col-md-2">
+                    <mat-form-field>
+                      <input matInput placeholder="Add Category" name="category" [formControl]="addCategoryControl"
+                        required>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <mat-action-row>
+                  <button mat-stroked-button class="float-right" color="accent" (click)="addCategory()">Save Category</button>
+                </mat-action-row>
+              </mat-expansion-panel>
+  
+              <mat-expansion-panel [expanded]=" 0 <= step && step < 2" (opened)="setStep(0)" hideToggle >
+                <mat-expansion-panel-header>
+                  <mat-panel-title style=color:crimson [ngStyle]="{'font-weight':step < 0 ? 'normal':'bold' }">
+                    Add Product Type
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="row">
+                  <div class="col-md-3">
+                    <mat-form-field>
+                      <mat-select placeholder="Category" name="productCategoriesId" [formControl]="selectProductCategoriesControl" (selectionChange)="OnProductCatagorySelection($event.value)">
+                        <mat-option *ngFor="let productCategory of productCategories" [value]="productCategory.id">
+                          {{productCategory.name}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-2">
+                    <mat-form-field>
+                      <input matInput placeholder="Add Type" name="type" [formControl]="addTypeControl" required>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <mat-action-row>
+                  <button mat-stroked-button class="float-right" color="accent" (click)="addType()">Save Type</button>
+                </mat-action-row>
+              </mat-expansion-panel>
+  
+              <mat-expansion-panel [expanded]="1 <= step && step < 3" (opened)="setStep(1)" hideToggle [disabled]="step < 1">
+                <mat-expansion-panel-header>
+                  <mat-panel-title style=color:crimson [ngStyle]="{'font-weight':step < 0 ? 'normal':'bold' }">
+                    Add Product Brand
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="row">
+                  <div class="col-md-3">
+                    <mat-form-field>
+                      <mat-select placeholder="Product Types" name="productTypeId" [formControl]="selectProductTypeControl" (selectionChange)="OnProductTypeSelection($event.value)" >
+                        <mat-option *ngFor="let productType of productTypes" [value]="productType.id">
+                          {{productType.name}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-2">
+                    <mat-form-field>
+                      <input matInput placeholder="Add Brand" name="brand" [formControl]="addBrandControl" required>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <mat-action-row>
+                    <button mat-stroked-button class="float-right" color="accent" (click)="addBrand()">Save Brand</button>
+                  </mat-action-row>
+              </mat-expansion-panel>
+
+              <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle [disabled]="step < 2">
+                <mat-expansion-panel-header>
+                  <mat-panel-title style=color:crimson [ngStyle]="{'font-weight':step < 0 ? 'normal':'bold' }">
+                    Add Product
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="row">
+                  <div class="col-md-3">
+                    <mat-form-field>
+                      <mat-select placeholder="Product Brand" name="productBrandId" [formControl]="selectProductBrandControl">
+                        <mat-option *ngFor="let productBrand of productBrands" [value]="productBrand.id">
+                          {{productBrand.name}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-2">
+                    <mat-form-field>
+                      <input matInput placeholder="Add Product" name="product" [formControl]="addProductControl" required>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <mat-action-row>
+                    <button mat-stroked-button class="float-right" color="accent" (click)="addProduct()">Save Product</button>
+                  </mat-action-row>
+              </mat-expansion-panel>
+  
+  
+            </mat-accordion>
+          </form>
+        </div>
+  
+      </div>
+    </div>
+  </div>

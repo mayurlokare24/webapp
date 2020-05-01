@@ -17,15 +17,21 @@ export class User{
   
     constructor(){}
 
-}
+};
+
+
+
+// export class ProductDomainInfo 
+// {
+//     domain_name:string,
+//     domain_val:[]
+// };
+
 export class Login{
     username:string;
     password:string;
-}
-export class ProductDomain{
-    domainName:string;
-    imgURL:any;
-}
+};
+
 
 export class ValueMap {
     key:string;
