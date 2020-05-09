@@ -19,17 +19,21 @@ categoryId:number;
 
 export class AddProduct{
     // id:number;
-    // typeId:number;
-    //categoryId: number;
+    typeId:any;
+    categoryId: any;
     brandId:number;
     name:string;
-    productAmount:number
-    variations:AddProductVarition[];
+    productAmount:number;
+    quantity:number;
+    grammageId:number;
+    description:string;
+   // imagefile:any;
 
 }
-
-export class AddProductVarition{
-    size:number
-    name:string
-    grammageId:number
+export class Grammage{
+    id:number;
+    size:number;
 }
+
+
+

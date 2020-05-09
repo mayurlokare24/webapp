@@ -122,12 +122,54 @@
                       </mat-select>
                     </mat-form-field>
                   </div>
-                  <div class="col-md-2">
+                  <div class="col-md-3">
                     <mat-form-field>
                       <input matInput placeholder="Add Product" name="product" [formControl]="addProductControl" required>
                     </mat-form-field>
                   </div>
-                </div>
+                  <div class="col-md-3">
+                    <mat-form-field>
+                      <input matInput placeholder="Product size" name="size" [formControl]="addProductSizeControl" required>
+                    </mat-form-field>
+                  </div>
+
+                  <div class="col-md-3">
+                    <mat-form-field>
+                      <input matInput placeholder="Quantity" name="quantity" [formControl]="addProductQuantityControl" required>
+                    </mat-form-field>
+                    
+                  </div> 
+
+                  <div class="col-md-3">
+                    <mat-form-field>
+                      <input matInput placeholder="Price" name="price" [formControl]="addProductPriceControl" required>
+                    </mat-form-field>
+                    
+                  </div> 
+              
+                  <div class="col-md-3">
+                    <mat-form-field>
+                      <input matInput placeholder="Enter Description" name="description" [formControl]="description">
+                    
+                  
+                    </mat-form-field>
+              
+                  </div>
+               
+                 
+                   <div *ngIf="currentFileUpload" class="progress">
+                    <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
+                      aria-valuemin="0" aria-valuemax="100" [ngStyle]="{width:progress.percentage+'%'}">
+                      {{progress.percentage}}%</div>
+                  </div>
+                  
+                  <label class="btn btn-default">
+                    <input type="file" (change)="selectFile($event)">
+                  </label>
+                  
+                  <!-- <button class="btn btn-success" [disabled]="!selectedFiles" (click)="upload()">Upload</button> -->
+                  
+                </div> 
                 <mat-action-row>
                     <button mat-stroked-button class="float-right" color="accent" (click)="addProduct()">Save Product</button>
                   </mat-action-row>
