@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import{Router} from '@angular/router';
+import { UserService } from './user.service';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +9,10 @@ import{Router} from '@angular/router';
 })
 export class AppComponent {
   title = 'webApp';
-
-  constructor(private router : Router){}
-
+  userService: UserService;
+  constructor(private router : Router, private userServie: UserService){
+    this.userService = userServie;
+  }
 
   additem():void {
     this.router.navigateByUrl('product');
