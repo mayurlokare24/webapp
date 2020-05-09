@@ -1,1 +1,17 @@
-<p>product works!</p>
+<mat-grid-list [cols]="col_count" (window:resize)="onResize($event)" rowHeight="380px" col [gutterSize]="'10px'">
+    <mat-grid-tile *ngFor="let product of products">
+        <mat-card class="example-card" style=" background-color: lemonchiffon;" >
+            <img mat-card-image [src]="product.url" style="height: 240px;" alt="Photo of a Shiba Inu">
+            <mat-card-title style="margin-bottom: 0px;">{{product.product_name}}</mat-card-title>
+            <mat-card-subtitle>Price : {{product.price}}</mat-card-subtitle>
+            <mat-card-content style="margin-bottom: 0px;">
+              <p>
+                {{product.descr}} 
+              </p>
+            </mat-card-content>
+            
+              <div><button mat-raised-button style="background-color: cadetblue;">Add to Wish List</button><button mat-raised-button style="background-color: orange;">Add to Cart</button></div>
+            
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

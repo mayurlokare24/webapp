@@ -17,11 +17,19 @@
     text-align: center;
 }
 .example-card {
-  max-width: 400px;
+  width: 300px;
+  height: 360px;
+  /* max-height: 200px; */
+  text-align: center;
 }
 
 .example-header-image {
   background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-  background-size: cover;
+  background-size: cover; 
 }
 
+img {
+  width: auto;
+  align-self: center;
+  padding-top: 10px;
+}
